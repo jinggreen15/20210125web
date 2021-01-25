@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
+
+$color-gray: #555;
+$color-white: #e9e9e9;
+$color-black: #000000;
+
+nav {
+    display: grid;
+    grid-template-columns: 15% auto 15%;
+    text-align: center;
+    background: $color-gray;
+    padding: 30px;
+    color: $color-white;
+
+    #link {
+        a {
+            color: $color-black;
+            text-decoration: none;
+            font-size: 20px;
+            padding: 0 60px;
+            transition: 0.3s;
+            display: inline-block;
+            // inline-block = 行內區塊元素 不會自己一行並且可以縮放
+
+            &:hover {
+                color: $color-gray;
+                transform: scale(1.5);
+            }
+        }
+    }
+
+    #social {
+        a {
+            transition: 0.5s;
+            padding: 0 10px;
+
+            // 滑入效果
+            &:hover {
+                filter: invert(75%) sepia(12%) saturate(2175%) hue-rotate(147deg) brightness(93%) contrast(92%);
+            }
+        }
+    }
+}
+
+.logo {
+    font-weight: 900;
+    transition: 0.5s;
+    font-size: 36px !important;
+    font-family: "Coda Caption", sans-serif;
+
+    &:hover {
+        transform: scale(2);
+    }
+}
+
+#banner {
+    // 左邊小箭頭
+    .slick-prev {
+        left: 50px;
+        // z-index=優先順序
+        z-index: 2;
+    }
+
+    // 右邊小箭頭
+    .slick-next {
+        right: 50px;
+        // z-index=優先順序
+        z-index: 2;
+    }
+
+    // 底下點點
+    .slick-dots {
+        bottom: 50px;
+        // z-index=優先順序
+        z-index: 2;
+    }
+}
+
+// 迴圈
+@for $i from 1 through 10 {
+    .banner#{$i} {
+        background-image: url(./image/Polar\ bear01.jpg);
+        height: 100vh;
+        // vh = 整個畫面的高度
+        text-align: center;
+        // 標題保持置中
+        color: $color-white;
+
+        // 去除輪播圖的框線
+        &:focus {
+            outline: none;
+        }
+
+        h1 {
+            padding: 350px 0 50px 20px;
+            font-size: 72px;
+            letter-spacing: 20px;
+            text-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+    }
+}

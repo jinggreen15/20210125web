@@ -1,13 +1,26 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 微軟正黑體;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 nav {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 15% auto 15%;
       grid-template-columns: 15% auto 15%;
   text-align: center;
-  background: #555;
-  padding: 30px;
-  color: #e9e9e9;
+  background: #e5e5e5;
+  padding: 30px 0;
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+  position: fixed;
+  z-index: 3;
+  width: 100%;
 }
 
 nav #link a {
@@ -18,10 +31,11 @@ nav #link a {
   -webkit-transition: 0.3s;
   transition: 0.3s;
   display: inline-block;
+  vertical-align: 10px;
 }
 
 nav #link a:hover {
-  color: #555;
+  color: #e5e5e5;
   -webkit-transform: scale(1.5);
           transform: scale(1.5);
 }
@@ -37,56 +51,244 @@ nav #social a:hover {
           filter: invert(75%) sepia(12%) saturate(2175%) hue-rotate(147deg) brightness(93%) contrast(92%);
 }
 
+nav #social a img {
+  width: 20px;
+}
+
 .logo {
   font-weight: 900;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
+  -webkit-transition: 0.5s !important;
+  transition: 0.5s !important;
   font-size: 36px !important;
   font-family: "Coda Caption", sans-serif;
+  letter-spacing: 3px;
+  padding-left: 3px;
 }
 
 .logo:hover {
-  -webkit-transform: scale(2);
-          transform: scale(2);
+  -webkit-transform: scale(2) !important;
+          transform: scale(2) !important;
 }
 
-.banner1 {
-  background-image: url();
+.logo span {
+  font-family: "Passion One", cursive;
+  vertical-align: 3px;
+  font-size: 30px;
 }
 
-.banner2 {
-  background-image: url();
+#banner .slick-prev {
+  left: 50px;
+  z-index: 2;
 }
 
-.banner3 {
-  background-image: url();
+#banner .slick-next {
+  right: 50px;
+  z-index: 2;
 }
 
-.banner4 {
-  background-image: url();
+#banner .slick-dots {
+  bottom: 50px;
+  z-index: 2;
 }
 
-.banner5 {
-  background-image: url();
+#banner .banner1 {
+  background-image: url(./image/Polarbear01.jpg);
+  height: 100vh;
+  text-align: center;
+  color: #e9e9e9;
+  background-size: cover;
 }
 
-.banner6 {
-  background-image: url();
+#banner .banner1:focus {
+  outline: none;
 }
 
-.banner7 {
-  background-image: url();
+#banner .banner1 h1 {
+  padding: 350px 0 50px 20px;
+  font-size: 72px;
+  letter-spacing: 20px;
+  text-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
-.banner8 {
-  background-image: url();
+#banner .banner1 h2 {
+  font-size: 24px;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.45);
 }
 
-.banner9 {
-  background-image: url();
+#banner .banner2 {
+  background-image: url(./image/Polarbear02.jpg);
+  height: 100vh;
+  text-align: center;
+  color: #e9e9e9;
+  background-size: cover;
 }
 
-.banner10 {
-  background-image: url();
+#banner .banner2:focus {
+  outline: none;
+}
+
+#banner .banner2 h1 {
+  padding: 350px 0 50px 20px;
+  font-size: 72px;
+  letter-spacing: 20px;
+  text-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+#banner .banner2 h2 {
+  font-size: 24px;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.45);
+}
+
+#banner .banner3 {
+  background-image: url(./image/Polarbear03.jpg);
+  height: 100vh;
+  text-align: center;
+  color: #e9e9e9;
+  background-size: cover;
+}
+
+#banner .banner3:focus {
+  outline: none;
+}
+
+#banner .banner3 h1 {
+  padding: 350px 0 50px 20px;
+  font-size: 72px;
+  letter-spacing: 20px;
+  text-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+#banner .banner3 h2 {
+  font-size: 24px;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.45);
+}
+
+#banner .banner4 {
+  background-image: url(./image/Polarbear04.jpg);
+  height: 100vh;
+  text-align: center;
+  color: #e9e9e9;
+  background-size: cover;
+}
+
+#banner .banner4:focus {
+  outline: none;
+}
+
+#banner .banner4 h1 {
+  padding: 350px 0 50px 20px;
+  font-size: 72px;
+  letter-spacing: 20px;
+  text-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+#banner .banner4 h2 {
+  font-size: 24px;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.45);
+}
+
+#banner .banner5 {
+  background-image: url(./image/Polarbear05.jpg);
+  height: 100vh;
+  text-align: center;
+  color: #e9e9e9;
+  background-size: cover;
+}
+
+#banner .banner5:focus {
+  outline: none;
+}
+
+#banner .banner5 h1 {
+  padding: 350px 0 50px 20px;
+  font-size: 72px;
+  letter-spacing: 20px;
+  text-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+#banner .banner5 h2 {
+  font-size: 24px;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.45);
+}
+
+#banner .banner6 {
+  background-image: url(./image/Polarbear06.jpg);
+  height: 100vh;
+  text-align: center;
+  color: #e9e9e9;
+  background-size: cover;
+}
+
+#banner .banner6:focus {
+  outline: none;
+}
+
+#banner .banner6 h1 {
+  padding: 350px 0 50px 20px;
+  font-size: 72px;
+  letter-spacing: 20px;
+  text-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+#banner .banner6 h2 {
+  font-size: 24px;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.45);
+}
+
+#news {
+  width: 1280px;
+  margin: 0 auto;
+}
+
+#news #news-content {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}
+
+#news #news-content .news-card {
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+#news #news-content img {
+  width: 100%;
+  height: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+#news #news-content h3 {
+  text-align: center;
+  padding: 10px;
+}
+
+#news #news-content p {
+  line-height: 1.5;
+  font-size: 14px;
+  padding: 20px 20px 30px;
+}
+
+.btn {
+  background: #e5e5e5;
+  color: #e9e9e9;
+  padding: 15px 0;
+  display: block;
+  margin: 0 auto;
+  width: 95%;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.btn:hover {
+  border: 1px solid #e5e5e5;
+  background: #e9e9e9;
+  color: #e5e5e5;
 }
 /*# sourceMappingURL=style.css.map */

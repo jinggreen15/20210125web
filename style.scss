@@ -1,7 +1,7 @@
 // 將scss轉換為css
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
 
-$color-gray: #555;
+$color-gray: #e5e5e5;
 $color-white: #e9e9e9;
 $color-black: #000000;
 // 文字陰影
@@ -61,11 +61,11 @@ nav {
             &:hover {
                 filter: invert(75%) sepia(12%) saturate(2175%) hue-rotate(147deg) brightness(93%) contrast(92%);
             }
-        }
-        // 圖片大小設定
-        img {
-            width: 20px;
-            vertical-align: -20px;
+            // 圖片大小設定
+            img {
+                width: 20px;
+                // vertical-align: -20px;
+            }
         }
     }
 }
@@ -113,15 +113,18 @@ nav {
         z-index: 2;
     }
 
-    // 迴圈
-    @for $i from 1 through 10 {
+    // 輪播圖迴圈
+    @for $i from 1 through 6 {
         .banner#{$i} {
-            background-image: url(./image/Polar\ bear01.jpg);
+            // ./image/Polarbear0#{$i}.jpg 固定公式 Polarbear0會因檔名改變
+            background-image: url(./image/Polarbear0#{$i}.jpg);
             height: 100vh;
             // vh = 整個畫面的高度
             text-align: center;
             // 標題保持置中
             color: $color-white;
+            // 讓圖片背景滿版
+            background-size: cover;
 
             // 去除輪播圖的框線
             &:focus {

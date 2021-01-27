@@ -1,16 +1,37 @@
+// 將scss轉換為css
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
 
 $color-gray: #555;
 $color-white: #e9e9e9;
 $color-black: #000000;
+// 文字陰影
+$text-shadow: 0 2px 5px rgba(0, 0, 0, 0.45);
+// 盒子陰影
+$box-shawod: 0 5px 10px rgba(0, 0, 0, 0.5);
 
+// 將所有預設值歸零
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 微軟正黑體;
+    box-sizing: border-box;
+}
+
+// 導覽列
 nav {
     display: grid;
     grid-template-columns: 15% auto 15%;
     text-align: center;
     background: $color-gray;
-    padding: 30px;
-    color: $color-white;
+    padding: 30px 0;
+    box-shadow: $box-shawod;
+
+    // 使導覽列固定於上方
+    position: fixed;
+    // 讓導覽列位於最上層
+    z-index: 3;
+    // 導覽列被固定時寬會跑掉
+    width: 100%;
 
     #link {
         a {
@@ -21,7 +42,9 @@ nav {
             transition: 0.3s;
             display: inline-block;
             // inline-block = 行內區塊元素 不會自己一行並且可以縮放
+            vertical-align: 10px;
 
+            // 滑入效果
             &:hover {
                 color: $color-gray;
                 transform: scale(1.5);
@@ -39,17 +62,32 @@ nav {
                 filter: invert(75%) sepia(12%) saturate(2175%) hue-rotate(147deg) brightness(93%) contrast(92%);
             }
         }
+        // 圖片大小設定
+        img {
+            width: 20px;
+            vertical-align: -20px;
+        }
     }
 }
 
 .logo {
     font-weight: 900;
-    transition: 0.5s;
+    transition: 0.5s !important;
     font-size: 36px !important;
+    // 字型可從Google Fonts選其他字型
     font-family: "Coda Caption", sans-serif;
+    letter-spacing: 3px;
+    padding-left: 3px;
 
     &:hover {
-        transform: scale(2);
+        transform: scale(2) !important;
+    }
+
+    // 小區塊標籤，本身無意義
+    span {
+        font-family: "Passion One", cursive;
+        vertical-align: 3px;
+        font-size: 30px;
     }
 }
 
@@ -74,28 +112,87 @@ nav {
         // z-index=優先順序
         z-index: 2;
     }
+
+    // 迴圈
+    @for $i from 1 through 10 {
+        .banner#{$i} {
+            background-image: url(./image/Polar\ bear01.jpg);
+            height: 100vh;
+            // vh = 整個畫面的高度
+            text-align: center;
+            // 標題保持置中
+            color: $color-white;
+
+            // 去除輪播圖的框線
+            &:focus {
+                outline: none;
+            }
+
+            h1 {
+                padding: 350px 0 50px 20px;
+                font-size: 72px;
+                letter-spacing: 20px;
+                text-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            }
+
+            h2 {
+                font-size: 24px;
+                text-shadow: $text-shadow;
+            }
+        }
+    }
 }
 
-// 迴圈
-@for $i from 1 through 10 {
-    .banner#{$i} {
-        background-image: url(./image/Polar\ bear01.jpg);
-        height: 100vh;
-        // vh = 整個畫面的高度
-        text-align: center;
-        // 標題保持置中
-        color: $color-white;
+// 最新消息
+#news {
+    width: 1280px;
+    margin: 0 auto;
 
-        // 去除輪播圖的框線
-        &:focus {
-            outline: none;
+    #news-content {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 20px;
+
+        .news-card {
+            box-shadow: $box-shawod;
         }
 
-        h1 {
-            padding: 350px 0 50px 20px;
-            font-size: 72px;
-            letter-spacing: 20px;
-            text-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
         }
+
+        h3 {
+            text-align: center;
+            padding: 10px;
+        }
+
+        p {
+            line-height: 1.5;
+            font-size: 14px;
+            padding: 20px 20px 30px;
+        }
+    }
+}
+
+// 按鈕樣式
+.btn {
+    background: $color-gray;
+    color: $color-white;
+    padding: 15px 0;
+    display: block;
+    margin: 0 auto;
+    width: 95%;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    transition: 0.5s;
+
+    &:hover {
+        border: 1px solid $color-gray;
+        background: $color-white;
+        color: $color-gray;
     }
 }

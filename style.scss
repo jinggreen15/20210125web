@@ -10,9 +10,9 @@ $text-shadow: 0 2px 5px rgba(0, 0, 0, 0.45);
 $box-shawod: 0 5px 10px rgba(0, 0, 0, 0.5);
 
 // 平板裝置
-$tablet:1024px;
+$tablet: 1024px;
 // 手機裝置
-$mobile:767px;
+$mobile: 767px;
 
 // 將所有預設值歸零
 * {
@@ -253,9 +253,19 @@ form {
     margin: 0 auto;
     padding: 20px 0 100px;
 
+    @media screen and (max-width: $tablet) {
+        padding: 50%;
+        width: 20px 20px 100px;
+    }
+
     input {
         width: 49%;
         padding: 10px;
+
+        @media screen and (max-width: $tablet) {
+            width: 100%;
+            margin-bottom: 20px;
+        }
 
         // 預設文字 ::placeholder
         &::placeholder {

@@ -37,8 +37,64 @@ nav {
     z-index: 3;
     // 導覽列被固定時寬會跑掉
     width: 100%;
+    // 避免導覽列被撐開
+    height: 120px;
+
+    @media screen and (max-width: $tablet) {
+        grid-template-columns: 100% 0;
+    }
+
+    @media screen and (max-width: $mobile) {
+        padding: 20px 0;
+    }
+
+    // 選單
+    #link-work {
+        // position=定位 使文字可堆疊在圖片上  relative=相對位置-做在父元素上
+        position: relative;
+        display: inline-block;
+        padding: 0 60px;
+        vertical-align: 10px;
+        height: 300px;
+
+        // 滑入以後顯示裡面的子分頁元素
+        &:hover .sub-link {
+            // display: block; 第一種作法
+            transform: scale(1);
+        }
+    }
+
+    .sub-link {
+        // display: none; 第一種作法
+
+        // 第二種作法
+        // 滑入前為0
+        transform: scale(0);
+        // 動畫時間為1秒
+        transition: 1s;
+
+        // position=定位 使文字可堆疊在圖片上  absolute=絕對位置-做在子元素上
+        position: absolute;
+        top: 70px;
+        left: 500px;
+        background: $color-white;
+
+        // 指定元素
+        &:hover {
+            display: block;
+        }
+
+        a {
+            display: block !important;
+            padding: 30px 80px !important;
+        }
+    }
 
     #link {
+        @media screen and (max-width: $tablet) {
+            display: none;
+            padding: 550px 0 50px 20px;
+        }
         a {
             color: $color-black;
             text-decoration: none;
